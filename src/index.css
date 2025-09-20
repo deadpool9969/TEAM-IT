@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+body {
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+}
+
+.left {
+  scrollbar-width: none;
+}
+
+@keyframes slideUp {
+  0%, 40% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50%, 100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  0%, 40% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-slideIn {
+  animation: slideIn 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+

@@ -1,0 +1,34 @@
+import React, { useState, useEffect } from "react";
+import Header from "../header/header";
+import LeftSide from "../subComponents/leftSide";
+import RightSide from "../subComponents/rightSide";
+import LoginModal from "../modal/LoginModal";
+
+const Layout = () => {
+    const [showLogin, setShowLogin] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        console.log("token from localStorage:", token);
+        if (!token) setShowLogin(true);
+    }, []);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) setShowLogin(true);
+    }, []);
+
+    return (
+        <div className="w-screen h-screen relative">
+            {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
+
+            <Header />
+            <div className="w-full h-[calc(100vh-48px)] flex">
+                <LeftSide />
+                <RightSide />
+            </div>
+        </div>
+    );
+};
+
+export default Layout;
