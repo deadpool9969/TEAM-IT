@@ -15,14 +15,14 @@ const LoginModal = ({ onClose }) => {
 
         try {
             // Send POST request to dummy API
-            const response = await axios.post("https://dummyapi.io/submit-mobile", {
+            const response = await axios.post("http://192.168.0.106:3000/api/v1/auth/login", {
                 mobile: mobile, // { "mobile": "1234567890" }
             });
 
             console.log("Response from API:", response.data);
 
             // Save dummy token to localStorage
-            localStorage.setItem("token", "dummy-token");
+            localStorage.setItem("token", response.data.token);
 
             // Close modal
             onClose();
