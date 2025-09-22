@@ -208,8 +208,19 @@ const RightSide = () => {
           </div>
 
           <TimelineBar loginAt={item.loginAt} logoutAt={item.logoutAt} tasks={item.tasks} />
-          <div className="mt-1 text-xs text-gray-500">
-            {item.userStatus === "active" ? "Active" : "Logged Out"}
+          <div className="mt-1 flex flex-col relative h-6 overflow-hidden pl-[4px]">
+            <span
+              className={`font-semibold absolute text-xs text-[#4f5050] ${item.userStatus === "active" ? "animate-slideUp" : ""
+                }`}
+            >
+              {item.userStatus === "loggedOut" ? "Logged Out" : "late (23m)"}
+            </span>
+
+            {item.userStatus === "active" && (
+              <span className="font-semibold absolute text-xs text-[#4f5050] animate-slideIn [animation-delay:2s]">
+                Ideal
+              </span>
+            )}
           </div>
         </div>
       ))}
