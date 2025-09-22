@@ -198,7 +198,7 @@ const RightSide = () => {
 
       {/* User cards */}
       {cards.map((item) => (
-        <div key={item.id} className={`w-full p-3 border-b ${item.userStatus === "loggedOut" ? "opacity-50" : ""}`}>
+        <div key={item.id} className={`w-full p-3 ${item.userStatus === "loggedOut" ? "opacity-50" : ""}`}>
           <div className="flex items-center gap-3 mb-2">
             <span className="font-semibold text-sm">{item.username}</span>
             <span className="text-xs text-gray-500">
