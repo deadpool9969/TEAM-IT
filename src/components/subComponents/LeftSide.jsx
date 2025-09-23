@@ -190,7 +190,7 @@ const LeftSide = () => {
                                     <Dropdown className='text-black' menu={{ items }} trigger={['click']}>
                                         <a onClick={e => e.preventDefault()}>
                                             <Space>
-                                                Today
+                                                Status
                                                 <DownOutlined />
                                             </Space>
                                         </a>
