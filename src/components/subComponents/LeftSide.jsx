@@ -200,7 +200,7 @@ const LeftSide = () => {
             </div>
 
             {/* Group */}
-            <div className="left w-full mt-2 px-4 flex-col flex h-[95vh] overflow-y-auto">
+            <div className="scrollbar-hide w-full mt-2 px-4 flex-1 overflow-y-auto">
                 <div className='pb-[10%]'>
                     {Object.values(groups).map((group) => (
                         <div key={group.id} className="w-full pl-2 pb-2">
