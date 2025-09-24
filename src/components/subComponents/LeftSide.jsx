@@ -202,41 +202,41 @@ const LeftSide = () => {
             {/* Group */}
             <div className="left w-full mt-2 px-4 flex-col flex h-[95vh] overflow-y-auto">
                 <div className='pb-[10%]'>
-                {Object.values(groups).map((group) => (
-                    <div key={group.id} className="w-full pl-2 pb-2">
-                        {/* Group Header */}
-                        <div className="font-bold text-lg pb-2">{group.head}</div>
+                    {Object.values(groups).map((group) => (
+                        <div key={group.id} className="w-full pl-2 pb-2">
+                            {/* Group Header */}
+                            <div className="font-bold text-lg pb-2">{group.head}</div>
 
-                        {/* Group Tasks */}
-                        {group.tasks.map((task, index) => (
-                            <div key={index} className="mb-2 flex">
-                                {/* Big Checkbox */}
+                            {/* Group Tasks */}
+                            {group.tasks.map((task, index) => (
+                                <div key={index} className="mb-2 flex">
+                                    {/* Big Checkbox */}
 
-                                <div className="flex items-stretch">
-                                    {group.icon}
-                                </div>
-
-                                {/* Task Text */}
-                                <div className="ml-2">
-                                    <div className="flex items-center">
-                                        <span className="font-semibold text-sm">{task.name}</span>
+                                    <div className="flex items-stretch">
+                                        {group.icon}
                                     </div>
-                                    <div className="flex gap-3">
-                                        <span className="text-[#4f5050] text-xs flex items-center gap-[2px] font-semibold">
-                                            <User size={13} /> {task.user}
-                                        </span>
-                                        <span className="text-[#4f5050] text-xs flex items-center gap-[2px] font-semibold">
-                                            <ClockFading size={13} /> {task.time}
-                                        </span>
-                                        <span className="text-[#4f5050] text-xs font-semibold">
-                                            {task.hash}
-                                        </span>
+
+                                    {/* Task Text */}
+                                    <div className="ml-2">
+                                        <div className="flex items-center">
+                                            <span className="font-semibold text-sm">{task.name}</span>
+                                        </div>
+                                        <div className="flex gap-3">
+                                            <span className="text-[#4f5050] text-xs flex items-center gap-[2px] font-semibold">
+                                                <User size={13} /> {task.user}
+                                            </span>
+                                            <span className="text-[#4f5050] text-xs flex items-center gap-[2px] font-semibold">
+                                                <ClockFading size={13} /> {task.time}
+                                            </span>
+                                            <span className="text-[#4f5050] text-xs font-semibold">
+                                                {task.hash}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                ))}
+                            ))}
+                        </div>
+                    ))}
                 </div>
 
                 {/* search bar */}
