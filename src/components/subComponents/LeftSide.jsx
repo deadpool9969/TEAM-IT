@@ -201,6 +201,7 @@ const LeftSide = () => {
 
             {/* Group */}
             <div className="left w-full mt-2 px-4 flex-col flex h-[95vh] overflow-y-auto">
+                <div className='pb-[10%]'>
                 {Object.values(groups).map((group) => (
                     <div key={group.id} className="w-full pl-2 pb-2">
                         {/* Group Header */}
@@ -236,24 +237,35 @@ const LeftSide = () => {
                         ))}
                     </div>
                 ))}
+                </div>
 
                 {/* search bar */}
-                <div className='w-full flex items-center justify-center sticky bottom-0 p-2'>
-                    <div className="flex w-full max-w-md relative">
-                        <input
-                            type="text"
-                            placeholder="Add Task..."
-                            className="flex-grow h-10 pl-4 pr-16 shadow-md text-sm border mb-[1rem] border-gray-300 rounded-full transition-all duration-300 ease-in-out focus:h-16 focus:rounded-md focus:text-base"
-                        />
+                <div className='w-full flex items-center justify-center sticky bottom-[10%] group'>
+                    <div className="flex w-4/5 relative">
+                        <div className="flex items-center flex-grow h-12 pl-4 pr-16 shadow-md text-sm border mb-[1rem] rounded-full transition-all duration-400 ease-in-out bg-[rgba(180, 180, 180, 0.7)] backdrop-blur-[1px] border-gray-300 focus-within:h-25 focus-within:rounded-md focus-within:text-base focus-within:pb-9 relative group">
+
+                            {/* Input field */}
+                            <input
+                                type="text"
+                                placeholder="Add Task..."
+                                className="flex-grow bg-transparent outline-none text-sm group-focus-within:pb-6"
+                            />
+
+                            {/* Span tag (hidden until focus) */}
+                            <span className="group absolute left-0 top-14 ml-2 mt-2 group-focus-within:flex items-center px-3 py-1 bg-gray-200 rounded-full text-xs text-gray-700 cursor-pointer group-focus-within:transition group-focus-within:fade-in">
+                                Example Tag
+                            </span>
+
+                        </div>
 
                         {/* Paperclip Icon */}
-                        <div className="absolute right-10 top-1/2 -translate-y-1/2 text-gray-500 pb-3">
+                        <div className="absolute right-10 top-1/2 -translate-y-1/2 text-gray-500 pb-3 group-focus-within:pt-12">
                             <Paperclip size={16} />
                         </div>
 
                         {/* Send Icon */}
-                        <div className="absolute right-2 top-1/2 -translate-y-1/2 pb-3">
-                            <button className="w-[30px] h-[30px] flex items-center justify-center bg-black text-white rounded-full">
+                        <div className="absolute right-2 top-1/2 -translate-y-1/2 pb-3 group-focus-within:pt-12">
+                            <button className="w-[30px] h-[30px] flex items-center justify-center bg-black text-white rounded-full ">
                                 <MoveRight size={14} />
                             </button>
                         </div>
