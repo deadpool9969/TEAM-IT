@@ -252,7 +252,7 @@ const LeftSide = () => {
                             />
 
                             {/* Span tag (hidden until focus) */}
-                            <span className="hidden absolute left-0 top-14 ml-2 mt-2 group-focus-within:flex items-center px-3 py-1 bg-gray-200 rounded-full text-xs text-gray-700 cursor-pointer group-focus-within:transition group-focus-within:fade-in">
+                            <span className="hidden absolute bottom-0 -translate-y-1/2 group-focus-within:flex items-center px-3 py-1 bg-gray-200 rounded-full text-xs text-gray-700 cursor-pointer transition-opacity">
                                 Example Tag
                             </span>
 
