@@ -47,7 +47,7 @@ const Header = () => {
                         {/* Centered Logo */}
                         <img src={SkyQ_logo} alt="" className="w-14 pt-1 md:pt-0" />
 
-                        {/* Bell at far right */}
+                        {/* Bell right */}
                         <span className="absolute md:hidden right-2">
                             <Bell size={16} />
                         </span>

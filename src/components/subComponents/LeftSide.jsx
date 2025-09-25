@@ -240,10 +240,9 @@ const LeftSide = () => {
                 </div>
 
                 {/* search bar */}
-                <div className='w-full flex items-center justify-center sticky bottom-[10%] group'>
+                <div className="w-full flex items-center justify-center sticky bottom-[10%] group pt-10 md:pt-0">
                     <div className="flex w-4/5 relative">
                         <div className="flex items-center flex-grow h-12 pl-4 pr-16 shadow-md text-sm border mb-[1rem] rounded-full transition-all duration-400 ease-in-out bg-[rgba(180, 180, 180, 0.7)] backdrop-blur-[1px] border-gray-300 focus-within:h-25 focus-within:rounded-md focus-within:text-base focus-within:pb-9 relative group">
-
                             {/* Input field */}
                             <input
                                 type="text"
@@ -252,20 +251,19 @@ const LeftSide = () => {
                             />
 
                             {/* Span tag (hidden until focus) */}
-                            <span className="hidden absolute bottom-0 -translate-y-1/2 group-focus-within:flex items-center px-3 py-1 bg-gray-200 rounded-full text-xs text-gray-700 cursor-pointer transition-opacity">
+                            <span className="hidden absolute bottom-0 -translate-y-1/2 left-3 group-focus-within:flex items-center px-3 py-1 bg-gray-200 rounded-full text-xs text-gray-700 cursor-pointer transition-opacity">
                                 Example Tag
                             </span>
-
                         </div>
 
                         {/* Paperclip Icon */}
-                        <div className="absolute right-10 top-1/2 -translate-y-1/2 text-gray-500 pb-3 group-focus-within:pt-12">
+                        <div className="absolute right-10 bottom-5 transition-all group-focus-within:bottom-5 text-gray-500 pb-3">
                             <Paperclip size={16} />
                         </div>
 
                         {/* Send Icon */}
-                        <div className="absolute right-2 top-1/2 -translate-y-1/2 pb-3 group-focus-within:pt-12">
-                            <button className="w-[30px] h-[30px] flex items-center justify-center bg-black text-white rounded-full ">
+                        <div className="absolute right-2 bottom-3 transition-all group-focus-within:bottom-3 pb-3">
+                            <button className="w-[30px] h-[30px] flex items-center justify-center bg-black text-white rounded-full cursor-pointer" onClick={() => { Navigate('path') }} >
                                 <MoveRight size={14} />
                             </button>
                         </div>
