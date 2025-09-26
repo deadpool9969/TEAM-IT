@@ -312,33 +312,33 @@ const LeftSide = () => {
     return (
         <div className='md:w-1/2 w-full min-h-screen flex flex-col border-0 border-r border-gray-300 relative'>
 
-                        {/* icons/dropdown */}
-                        <div className='flex items-center justify-between p-2 sticky top-12 bg-white z-10'>
-                            {/* left task icons */}
-                            <div className='flex gap-4 px-3'>
-                                <span className='flex items-center gap-1'><BookCheck size={16} />1</span>
-                                <span className='flex items-center gap-1'><SquareCheckBig size={16} />2</span>
-                                <span className='flex items-center gap-1'><CircleAlert size={16} /></span>
-                                <span className='flex items-center gap-1'><LogOut size={16} /></span>
-                                <span className='flex items-center gap-1'><Clock size={16} /></span>
-                                <span className='flex items-center gap-1'><Home size={16} /></span>
-                            </div>
+            {/* icons/dropdown */}
+            <div className='flex items-center justify-between p-2 sticky top-12 bg-white z-10'>
+                {/* left task icons */}
+                <div className='flex gap-4 px-3'>
+                    <span className='flex items-center gap-1'><BookCheck size={16} />1</span>
+                    <span className='flex items-center gap-1'><SquareCheckBig size={16} />2</span>
+                    <span className='flex items-center gap-1'><CircleAlert size={16} /></span>
+                    <span className='flex items-center gap-1'><LogOut size={16} /></span>
+                    <span className='flex items-center gap-1'><Clock size={16} /></span>
+                    <span className='flex items-center gap-1'><Home size={16} /></span>
+                </div>
 
-                            {/* left hastag */}
-                            <div className='flex items-center'>
+                {/* left hastag */}
+                <div className='flex items-center'>
 
-                                <div className="dropdown pr-4 cursor-pointer text-xs">
-                                    <Dropdown className='text-black' menu={{ items }} trigger={['click']}>
-                                        <a onClick={e => e.preventDefault()}>
-                                            <Space>
-                                                Today
-                                                <DownOutlined />
-                                            </Space>
-                                        </a>
-                                    </Dropdown>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="dropdown pr-4 cursor-pointer text-xs">
+                        <Dropdown className='text-black' menu={{ items }} trigger={['click']}>
+                            <a onClick={e => e.preventDefault()}>
+                                <Space>
+                                    Status
+                                    <DownOutlined />
+                                </Space>
+                            </a>
+                        </Dropdown>
+                    </div>
+                </div>
+            </div>
 
                         {/* Group */}
                         <div className="left w-full mt-2 px-4 flex-col flex h-[95vh] overflow-y-auto">
@@ -446,7 +446,7 @@ const LeftSide = () => {
 
                         </div>
 
-                    </div>
+        </div>
     )
 }
 

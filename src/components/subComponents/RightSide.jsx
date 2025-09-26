@@ -337,9 +337,10 @@ const RightSide = () => {
           </span>
         </div>
 
+        {/* right hastag */}
         <div className="flex items-center">
-          {["Hashtags", "Resources", "Status", "Today"].map((label, i) => (
-            <div key={i} className="p-2 text-xs cursor-pointer">
+          {["Status"].map((label, i) => (
+            <div key={i} className="p-2 text-xs cursor-pointer pr-7">
               <Dropdown menu={{ items }} trigger={["click"]}>
                 <a onClick={(e) => e.preventDefault()}>
                   <Space>{label}<DownOutlined /></Space>
