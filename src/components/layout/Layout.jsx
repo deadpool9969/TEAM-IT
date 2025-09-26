@@ -3,9 +3,17 @@ import Header from "../header/header";
 import LeftSide from "../subComponents/leftSide";
 import RightSide from "../subComponents/rightSide";
 import LoginModal from "../modal/LoginModal";
+import { useDispatch } from "react-redux";
+import { initializeAuth } from "../../store/authSlice";
 
 const Layout = () => {
     const [showLogin, setShowLogin] = useState(false);
+        const dispatch = useDispatch();
+  
+    useEffect(() => {
+      dispatch(initializeAuth());
+    }, [dispatch]);
+
 
     useEffect(() => {
         const token = localStorage.getItem("token");
