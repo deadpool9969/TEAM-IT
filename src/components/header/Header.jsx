@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SkyQ_logo from "../../assets/SkyQ_logo.svg"
 import { User, ClockFading, BookCheck, SquareCheckBig, CreditCard, CopyCheck, LogOut, CircleAlert,Bell } from 'lucide-react'
 import { Dropdown, Space } from 'antd'
 import { DownOutlined, SmileOutlined } from '@ant-design/icons';
 
 const Header = () => {
+
+     const [user, setUser] = useState(null);
+    const [stats, setStats] = useState({
+        users: { active: 8, total: 12, pending: 13 },
+        time: { hours: 53, minutes: 22, percentage: 680 }
+    });
+
+    useEffect(() => {
+        // Get user data from localStorage
+        const userData = localStorage.getItem('user');
+        if (userData) {
+            setUser(JSON.parse(userData));
+        }
+    }, []);
+
+        const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        window.location.reload(); // Refresh to show login modal
+    };
 
      const items = [
         {
@@ -49,12 +69,12 @@ const Header = () => {
                         <div className='flex gap-3'>
                             <div className='flex items-center gap-1'>
                                 <span><User size={16} /></span>
-                                <span className='text-sm font-semibold text-[#4f5050]'>8/12(13)</span>
+                                <span className='text-sm font-semibold text-[#4f5050]'>  {stats.users.active}/{stats.users.total}({stats.users.pending})</span>
                             </div>
 
                             <div className='flex items-center gap-1'>
                                 <span><ClockFading size={16} /></span>
-                                <span className=' text-sm font-semibold text-[#4f5050]'>53 Hours 22 Minutes (680%)</span>
+                                <span className=' text-sm font-semibold text-[#4f5050]'>{stats.time.hours} Hours {stats.time.minutes} Minutes ({stats.time.percentage}%)</span>
                             </div>
                         </div>
 
@@ -97,6 +117,19 @@ const Header = () => {
                     <span className='pr-8'>
                         <Bell size={16} />
                     </span>
+                     {user && (
+                                        <Dropdown menu={{ items }} trigger={['click']} placement="bottomRight">
+                                            <div className='flex items-center gap-2 cursor-pointer hover:bg-gray-100 px-2 py-1 rounded'>
+                                                <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs">
+                                                    {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                                                </div>
+                                                <span className="text-sm font-medium hidden md:block">
+                                                    {user.name || 'User'}
+                                                </span>
+                                                <DownOutlined className="text-xs" />
+                                            </div>
+                                        </Dropdown>
+                                    )}
                 </div>
 
     )
