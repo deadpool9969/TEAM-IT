@@ -199,9 +199,8 @@ const LeftSide = () => {
                 </div>
             </div>
 
-            {/* Group */}
             <div className="scrollbar-hide w-full mt-2 px-4 flex-1 overflow-y-auto">
-                <div className='pb-[10%]'>
+                <div className="pb-[10%]">
                     {Object.values(groups).map((group) => (
                         <div key={group.id} className="w-full pl-2 pb-2">
                             {/* Group Header */}
@@ -212,14 +211,14 @@ const LeftSide = () => {
                                 <div key={index} className="mb-2 flex">
                                     {/* Big Checkbox */}
 
-                                    <div className="flex items-stretch">
-                                        {group.icon}
-                                    </div>
+                                    <div className="flex items-stretch">{group.icon}</div>
 
                                     {/* Task Text */}
                                     <div className="ml-2">
                                         <div className="flex items-center">
-                                            <span className="font-semibold text-sm">{task.name}</span>
+                                            <span className="font-semibold text-sm">
+                                                {task.name}
+                                            </span>
                                         </div>
                                         <div className="flex gap-3">
                                             <span className="text-[#4f5050] text-xs flex items-center gap-[2px] font-semibold">
@@ -269,7 +268,6 @@ const LeftSide = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
 
         </div>
