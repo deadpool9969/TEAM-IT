@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Header from "../header/header";
-import LeftSide from "../subComponents/leftSide";
-import RightSide from "../subComponents/rightSide";
+import Header from "../header/Header";
+import LeftSide from "../subComponents/LeftSide";
+import RightSide from "../subComponents/RightSide";
 import LoginModal from "../modal/LoginModal";
+import { useDispatch } from "react-redux";
+import { initializeAuth } from "../../store/authSlice";
 
 const Layout = () => {
     const [showLogin, setShowLogin] = useState(false);
+        const dispatch = useDispatch();
+  
+    useEffect(() => {
+      dispatch(initializeAuth());
+    }, [dispatch]);
+
 
     useEffect(() => {
         const token = localStorage.getItem("token");
